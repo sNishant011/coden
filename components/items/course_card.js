@@ -7,6 +7,11 @@ const CoursesCard = ({ src, title, active }) => {
     <div className={`course-card ${active ? 'active-card' : ''}`}>
       <Image src={require(`../../public/${src}`)} alt={title} />
       <h3 className='course-title'>{title}</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem blanditiis
+        quae cumque non vero ad est atque! Deserunt similique a tenetur et dolor
+        modi consequatur. Eum praesentium iure voluptatem excepturi.
+      </p>
       <Link href='/books'>
         <a className='btn warrow'>
           <span id='button-text'>Checkout</span>
