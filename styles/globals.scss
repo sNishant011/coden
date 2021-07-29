@@ -799,6 +799,9 @@ footer {
   }
   h1 {
     font-size: 3rem;
+    @include mobile() {
+      font-size: 2.5rem;
+    }
   }
   .icon {
     height: 20px;
@@ -813,7 +816,10 @@ footer {
     align-items: center;
     height: 60px;
     width: 100%;
-
+    @include mobile() {
+      margin-top: 1rem 0;
+      height: 50px;
+    }
     input {
       height: 100%;
       width: 50%;
@@ -827,7 +833,11 @@ footer {
       color: #fff;
       padding: 0.8rem 0.8rem;
       transition: all 0.3s ease;
-
+      @include mobile() {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 0.5rem;
+      }
       &::placeholder {
         color: #a3a3a3;
       }
@@ -851,6 +861,12 @@ footer {
         font-size: 1.6rem;
         font-weight: 800;
       }
+      @include mobile() {
+        height: 50px;
+        .text {
+          font-size: 1.1rem;
+        }
+      }
     }
   }
   h2 {
@@ -859,6 +875,7 @@ footer {
     align-items: center;
     font-weight: 650;
     font-size: 2rem !important;
+
     .icon-container {
       background-color: #00c62b73;
       padding: 0.6rem;
@@ -873,6 +890,13 @@ footer {
         color: #00c62b;
         height: 100%;
         width: 100%;
+      }
+    }
+    @include mobile() {
+      font-size: 1.5rem !important;
+      .icon-container {
+        height: 40px !important;
+        width: 40px !important;
       }
     }
   }

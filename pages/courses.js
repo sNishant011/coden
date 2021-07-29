@@ -54,8 +54,10 @@ const Courses = () => {
           </div>
         </div>
       </div>
-      <NewsletterResistor />
-      <Footer />
+      <div className='footer-container'>
+        <NewsletterResistor />
+        <Footer />
+      </div>
     </>
   )
 }
