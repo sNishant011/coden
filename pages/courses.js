@@ -6,6 +6,7 @@ import MetaHeading from '../components/meta-heading'
 import Nav from '../components/nav'
 import NewsletterResistor from '../components/newsletter_registor'
 import CoursesCard from '../components/items/course_card'
+import RequestCourseSection from '../components/items/course_request'
 const Courses = () => {
   return (
     <>
@@ -53,6 +54,7 @@ const Courses = () => {
             />
           </div>
         </div>
+        <RequestCourseSection />
       </div>
       <div className='footer-container'>
         <NewsletterResistor />

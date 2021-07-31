@@ -1,8 +1,9 @@
+
 const NewsletterResistor = () => {
   return (
     <section className='newsletter-registor'>
       <h1>Subscribe to our Newsletter?</h1>
-      <form className='form-div'>
+      <form className='form-div' action='https://facebook.com' method='post'>
         <input
           type='email'
           name='email'

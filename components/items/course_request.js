@@ -5,7 +5,7 @@ const RequestCourseSection = () => {
   return (
     <section className='course-request'>
       <h1>Didnt find the right course?</h1>
-      <Link href='/courses'>
+      <Link href='/course_request'>
         <a className='btn warrow'>
           <span id='button-text'>Request Course</span>
           <div className='icon-container'>

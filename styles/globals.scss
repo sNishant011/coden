@@ -931,3 +931,121 @@ footer {
     }
   }
 }
+.course-request-page {
+  padding: 0 3rem;
+  h1 {
+    font-size: 3rem;
+    margin-top: 2rem;
+    text-align: center;
+    @include tab() {
+      font-size: 2.5rem;
+    }
+    @include mobile() {
+      font-size: 2rem;
+    }
+  }
+  .course-request-form {
+    margin-top: 1rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    form {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      @include tab() {
+        width: 70%;
+      }
+      @include mobile() {
+        width: 100%;
+      }
+      label {
+        width: fit-content;
+        height: 20px;
+        position: relative;
+        word-spacing: 0.2rem;
+        font-weight: lighter;
+        top: -48px;
+        text-transform: capitalize;
+        transition: all 0.3s ease-in-out;
+        left: 0.8rem;
+        padding: 0 3px;
+        font-size: 1.6rem;
+        z-index: 3;
+        color: $primary-text-color;
+      }
+      input:focus + label,
+      input:valid + label,
+      input:not(:placeholder-shown) + label {
+        background-color: $primary-background;
+        top: -70px;
+        font-size: 1.1rem;
+      }
+      #name {
+        text-transform: capitalize;
+      }
+      input {
+        height: 60px;
+        width: 100%;
+        border-radius: 7px;
+        letter-spacing: 0.08rem;
+        border: 2px solid #6f6f6f;
+        background-color: transparent;
+        word-spacing: 0.2rem;
+        font-weight: 600;
+        z-index: 2;
+        font-size: 1.6rem;
+        color: #fff;
+        padding: 0.8rem 0.8rem;
+        transition: all 0.3s ease;
+
+        &::placeholder {
+          color: #a3a3a3;
+          visibility: hidden;
+          text-transform: capitalize;
+        }
+        &:focus {
+          outline: none;
+          border: 2px solid $accent-text-color;
+        }
+        @include mobile() {
+          font-size: 1.2rem;
+        }
+      }
+      input[type='email'] {
+        text-transform: lowercase;
+      }
+      button {
+        padding: 0.5rem;
+        font-size: 1.6rem;
+        border-radius: 8px;
+        outline: none;
+        width: 45%;
+        margin-top: 0;
+        @include tab() {
+          width: 70%;
+        }
+        @include mobile() {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+#small-text {
+  color: $primary-text-color;
+  font-size: 0.9rem;
+  text-align: center;
+
+  margin: 1rem 0.5rem;
+  &::before {
+    content: '*';
+  }
+}
+#form-accepted-text {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.6rem;
+}
