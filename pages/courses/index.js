@@ -16,7 +16,7 @@ const Courses = () => {
     <>
       <MetaHeading
         title='Courses'
-        thumbnail='https://cdn.pixabay.com/photo/2017/05/09/13/33/laptop-2298286_960_720.png'
+        thumbnail='https://i.ibb.co/tXnnyj4/Screenshot-2021-08-03-10-45-41.png'
       />
       <Nav />
       <div className='main-courses-pg'>

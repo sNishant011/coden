@@ -12,7 +12,11 @@ const Home = () => {
   console.log('doing some tests')
   return (
     <>
-      <MetaHeading title='Home' /> <Nav />
+      <MetaHeading
+        title='Home'
+        thumbnail='https://i.ibb.co/bm4ZLHn/Screenshot-2021-08-03-10-48-11.png'
+      />
+      <Nav />
       <div className='main'>
         <Landing />
         <Features />
