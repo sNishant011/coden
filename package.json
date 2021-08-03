@@ -16,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.21.1",
     "next": "11.0.1",
     "pageclip": "^1.0.0",
     "react": "17.0.2",

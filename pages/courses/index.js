@@ -1,13 +1,16 @@
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAward } from '@fortawesome/free-solid-svg-icons'
-import Footer from '../components/items/footer'
-import MetaHeading from '../components/meta-heading'
-import Nav from '../components/nav'
-import NewsletterResistor from '../components/newsletter_registor'
-import CoursesCard from '../components/items/course_card'
-import RequestCourseSection from '../components/items/course_request'
+import Footer from '../../components/items/footer'
+import MetaHeading from '../../components/meta-heading'
+import Nav from '../../components/nav'
+import NewsletterResistor from '../../components/newsletter_registor'
+import CoursesCard from '../../components/items/course_card'
+import RequestCourseSection from '../../components/items/course_request'
+import CoursesData from '../../courses_data'
+
 const Courses = () => {
+  const courses = CoursesData()
   return (
     <>
       <MetaHeading title='Courses' />
@@ -40,18 +43,15 @@ const Courses = () => {
         </h2>
         <div className='course-container'>
           <div className='courses'>
-            <CoursesCard
-              title='Full on Laravel and Vue'
-              src='illustrations_imgs/landing.png'
-            />
-            <CoursesCard
-              title='Build Apps with Flutter'
-              src='illustrations_imgs/flutter.png'
-            />
-            <CoursesCard
-              title='Reactify Web'
-              src='illustrations_imgs/react.png'
-            />
+            {courses.map((course, index) => (
+              <CoursesCard
+                key={index}
+                title={course.title}
+                src={course.thumbnail_src}
+                description={course.course_description}
+                course_slug={course.slug}
+              />
+            ))}
           </div>
         </div>
         <RequestCourseSection />

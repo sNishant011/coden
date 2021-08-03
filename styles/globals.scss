@@ -4,7 +4,7 @@
 $primary-background: #3f3f3f;
 $primary-text-color: #fff;
 $accent-text-color: #00c62b;
-$accent-dark: #00881d;
+$accent-dark: #005e19;
 $card-bg: #6c6c6c;
 $primary-font: 'Nunito', sans-serif;
 $mobile: 650px;
@@ -101,7 +101,43 @@ a {
   text-decoration: none;
   font-weight: 550;
 }
+.menu-btn {
+  height: 40px;
+  z-index: 5;
+  overflow: hidden;
+  width: 40px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  transition: 0.5s;
+  display: none;
+  @include navsize() {
+    display: flex;
+  }
+  .burger {
+    height: 3px;
+    width: 30px;
+    background-color: $accent-text-color;
+    border-radius: 8px;
+  }
 
+  .b1 {
+    transform: rotate(0deg) translateY(0px) translateX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  .b3 {
+    transform: rotate(0deg) translateY(0) translateX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  .b2 {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s ease-in-out;
+  }
+}
 nav {
   height: 80px;
   display: flex;
@@ -124,43 +160,6 @@ nav {
     z-index: 5;
   }
 
-  .menu-btn {
-    height: 40px;
-    z-index: 5;
-    overflow: hidden;
-    width: 40px;
-    padding: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 5px;
-    transition: 0.5s;
-    display: none;
-    @include navsize() {
-      display: flex;
-    }
-    .burger {
-      height: 3px;
-      width: 30px;
-      background-color: $accent-text-color;
-      border-radius: 8px;
-    }
-
-    .b1 {
-      transform: rotate(0deg) translateY(0px) translateX(0);
-      transition: all 0.3s ease-in-out;
-    }
-    .b3 {
-      transform: rotate(0deg) translateY(0) translateX(0);
-      transition: all 0.3s ease-in-out;
-    }
-    .b2 {
-      opacity: 1;
-      transform: translateX(0);
-      transition: all 0.3s ease-in-out;
-    }
-  }
   .links {
     display: flex;
     column-gap: 4rem;
@@ -291,11 +290,10 @@ nav {
   padding-top: 2rem;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-areas: 'texts svgpart';
 
   @include mobile() {
-    grid-template-columns: repeat(1, 1fr);
     grid-template-areas: 'svgpart' 'texts';
     .svg-container {
       svg {
@@ -346,12 +344,11 @@ nav {
 
   .cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     place-items: center;
     grid-gap: 3rem;
 
     @include tab() {
-      grid-template-columns: repeat(2, 1fr);
       .card {
         #number {
           bottom: 5%;
@@ -359,7 +356,6 @@ nav {
       }
     }
     @include mobile() {
-      grid-template-columns: repeat(1, 1fr);
       grid-gap: 1rem;
       .card {
         #number {
@@ -414,8 +410,7 @@ nav {
     }
   }
 }
-.featured-courses {
-}
+
 @include desktop() {
   div {
     .active-card {
@@ -475,14 +470,11 @@ nav {
 }
 .courses {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 2rem;
-  @include navsize() {
-    grid-template-columns: repeat(2, 1fr);
-  }
+
   @include mobile() {
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 2rem;
+    grid-gap: 1rem;
   }
 
   .course-card {
@@ -497,7 +489,7 @@ nav {
     padding: 2rem;
     &:hover {
       transform: scale(1.1);
-      background-color: rgb(34, 172, 0) !important;
+      background-color: #005e19 !important;
 
       .warrow {
         #button-text {
@@ -560,14 +552,11 @@ nav {
 .testemonials-section {
   .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 4rem;
-    @include tab() {
-      grid-template-columns: repeat(2, 1fr);
-    }
+
     @include mobile() {
       grid-gap: 2rem;
-      grid-template-columns: repeat(1, 1fr);
     }
     .card {
       display: flex;
@@ -764,10 +753,10 @@ nav {
 footer {
   color: $primary-text-color;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 3rem;
   @include tab() {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 2rem;
   }
   div {
@@ -1048,4 +1037,76 @@ footer {
   text-align: center;
   color: #fff;
   font-size: 1.6rem;
+}
+.course-chapter-section {
+  .chapter-container {
+    display: grid;
+    place-items: center;
+    .chapter-detail {
+      padding: 0 2rem;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+
+      h1 {
+        width: 100%;
+        text-align: left;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+  .chapters-nav {
+    background-color: #686868;
+    height: 100vh;
+    width: 220px;
+    position: absolute;
+    z-index: 100;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    top: initial;
+    transform: translateX(-100%);
+    h2 {
+      text-align: left;
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1.2rem;
+    }
+    li {
+      list-style: none;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      cursor: pointer;
+      width: 100%;
+      border-bottom: 2px solid $accent-text-color;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $accent-dark;
+      }
+    }
+    .chapters-list {
+      width: 100%;
+    }
+  }
+  .small-nav {
+    display: flex;
+    background-color: $accent-dark;
+    text-align: center;
+    padding: 0.5rem;
+
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+    .menu-btn {
+      display: flex;
+    }
+    .close-btn {
+      .b2 {
+        transform: translateX(-200%) !important;
+      }
+    }
+  }
 }
