@@ -13,6 +13,11 @@ const Nav = () => {
     if (navRef.current !== null) {
       if (prevScrollpos > currentScrollPos) {
         navRef.current.style.top = '0'
+        navRef.current.style.background = '#1f1d1d'
+        if (currentScrollPos===0){
+          navRef.current.style.background = '#3f3f3f'
+          
+        }
       } else {
         navRef.current.style.top = '-80px'
       }

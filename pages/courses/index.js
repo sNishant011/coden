@@ -11,6 +11,7 @@ import CoursesData from '../../courses_data'
 
 const Courses = () => {
   const courses = CoursesData()
+
   return (
     <>
       <MetaHeading title='Courses' />

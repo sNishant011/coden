@@ -1,7 +1,9 @@
 import CoursesCard from './items/course_card'
 import CoursesData from '../courses_data'
+
 const Courses = () => {
   const courses = CoursesData()
+
   return (
     <>
       <section className='featured-courses'>
