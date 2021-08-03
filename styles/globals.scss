@@ -1059,14 +1059,15 @@ footer {
     background-color: #686868;
     height: 100vh;
     width: 220px;
-    position: absolute;
-    z-index: 100;
+    position: fixed;
+    z-index: 10;
     padding: 0rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    top: initial;
+    top: 130px;
+
     transform: translateX(-100%);
     h2 {
       text-align: left;
@@ -1094,6 +1095,8 @@ footer {
     display: flex;
     background-color: $accent-dark;
     text-align: center;
+    position: sticky;
+    z-index: 10;
     padding: 0.5rem;
 
     h1 {

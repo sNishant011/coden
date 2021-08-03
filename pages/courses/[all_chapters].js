@@ -5,7 +5,7 @@ import MetaHeading from '../../components/meta-heading'
 import Nav from '../../components/nav'
 import NewsletterResistor from '../../components/newsletter_registor'
 import CoursesData from '../../courses_data'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import ChapterDetail from '../../components/chapterDetail'
 const CourseDetail = () => {
   const router = useRouter()
@@ -18,12 +18,38 @@ const CourseDetail = () => {
   const [currentChapter, setCurrentChapter] = useState(0)
   const [chapterMenuActive, setChapterMenuActive] = useState(false)
   const activeChapter = currentCourse?.chapters[currentChapter]
+  // for sticky nav
+  const navRef = useRef(null)
+  if (typeof window !== 'undefined') {
+    var prevScrollpos = window.pageYOffset
+  }
+  function onScroll() {
+    //navRef.current
+    var currentScrollPos = window.pageYOffset
+    if (navRef.current !== null) {
+      if (prevScrollpos > currentScrollPos) {
+        navRef.current.style.top = '80px'
+      } else {
+        navRef.current.style.top = '-80px'
+        setChapterMenuActive(false)
+      }
+      prevScrollpos = currentScrollPos
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll)
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [])
+
   return (
     <>
       <MetaHeading title={currentCourse?.title} />
       <Nav />
       <div className='course-chapter-section'>
-        <div className='small-nav'>
+        <div className='small-nav' ref={navRef}>
           <div
             className={`menu-btn ${chapterMenuActive ? 'close-btn' : ''}`}
             onClick={() => setChapterMenuActive(!chapterMenuActive)}
