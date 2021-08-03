@@ -31,9 +31,9 @@ const CourseDetail = () => {
         navRef.current.style.top = '80px'
       } else {
         navRef.current.style.top = '-80px'
-        setChapterMenuActive(false)
       }
       prevScrollpos = currentScrollPos
+      setChapterMenuActive(false)
     }
   }
   useEffect(() => {
