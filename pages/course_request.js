@@ -18,7 +18,7 @@ const RequestForm = () => {
     <form
       className='form-container'
       onSubmit={() => alert('Stopped form submission due to spam!!')}
-      method='post'
+      action='/'
     >
       <input
         type='text'
