@@ -19,7 +19,6 @@ const Books = () => {
       .then((response) => setBooks(response.data.results.books))
       .catch((err) => console.log(err))
   }, [])
-  console.log(books)
   return (
     <>
       <MetaHeading title='Courses' />

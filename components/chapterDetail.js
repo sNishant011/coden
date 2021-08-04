@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 const ChapterDetail = ({ chapter, setChapterMenuActive }) => {
-  console.log(chapter)
   const chapterDetails = useRef()
   useEffect(() => {
     chapterDetails.current.innerHTML = chapter?.content

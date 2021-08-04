@@ -9,7 +9,6 @@ import PlatformFeature from '../components/platform-feature'
 import NewsletterResistor from '../components/newsletter_registor'
 import Footer from '../components/items/footer'
 const Home = () => {
-  console.log('doing some tests')
   return (
     <>
       <MetaHeading
