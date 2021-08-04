@@ -11,14 +11,14 @@ const MetaHeading = ({ title, thumbnail }) => {
       <meta name='title' content={`CodeN | ${title}`} />
       <meta
         name='description'
-        content='This is my first next js project built by using nextjs'
+        content='This is my self project built by using nextjs'
       />
 
       <meta property='og:type' content='website' />
       <meta property='og:title' content={`CodeN | ${title}`} />
       <meta
         property='og:description'
-        content='This is my first next js project built by using nextjs'
+        content='This is my self project built by using nextjs'
       />
       <meta property='og:image' content={thumbnail} />
 
@@ -26,7 +26,7 @@ const MetaHeading = ({ title, thumbnail }) => {
       <meta property='twitter:title' content={`CodeN | ${title}`} />
       <meta
         property='twitter:description'
-        content='This is my first next js project built by using nextjs'
+        content='This is my self project built by using nextjs'
       />
       <meta property='twitter:image' content={thumbnail} />
       <link rel='icon' href='/favicon.ico' />
