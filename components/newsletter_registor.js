@@ -6,7 +6,11 @@ const Newsletterform = () => {
   }
 
   return (
-    <form className='form-div' onSubmit={handleSubmit} method='post'>
+    <form
+      className='form-div'
+      onSubmit={() => alert('Stopped form submission due to spam!!')}
+      method='post'
+    >
       <input
         type='email'
         name='email'
