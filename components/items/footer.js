@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
 import {
   faBookReader,
   faBookmark,
@@ -24,20 +25,36 @@ const Footer = () => {
         <h2>Quick Links</h2>
         <ul>
           <li>
-            <FontAwesomeIcon icon={faBookmark} />
-            Courses
+            <Link href='/courses'>
+              <a>
+                <FontAwesomeIcon icon={faBookmark} />
+                Courses
+              </a>
+            </Link>
           </li>
           <li>
-            <FontAwesomeIcon icon={faBookReader} />
-            Notes
+            <Link href='/books'>
+              <a>
+                <FontAwesomeIcon icon={faBookReader} />
+                Notes
+              </a>
+            </Link>
           </li>
           <li>
-            <FontAwesomeIcon icon={faLayerGroup} />
-            Community
+            <Link href='/'>
+              <a>
+                <FontAwesomeIcon icon={faLayerGroup} />
+                Community
+              </a>
+            </Link>
           </li>
           <li>
-            <FontAwesomeIcon icon={faFeatherAlt} />
-            Careers at CodeN
+            <Link href='/'>
+              <a>
+                <FontAwesomeIcon icon={faFeatherAlt} />
+                Careers at CodeN
+              </a>
+            </Link>
           </li>
         </ul>
       </div>
