@@ -1,10 +1,6 @@
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAward } from '@fortawesome/free-solid-svg-icons'
-import Footer from '../../components/items/footer'
-import MetaHeading from '../../components/meta-heading'
-import Nav from '../../components/nav'
-import NewsletterResistor from '../../components/newsletter_registor'
 import CoursesCard from '../../components/items/course_card'
 import RequestCourseSection from '../../components/items/course_request'
 import CoursesData from '../../courses_data'
@@ -14,11 +10,6 @@ const Courses = () => {
 
   return (
     <>
-      <MetaHeading
-        title='Courses'
-        thumbnail='https://i.ibb.co/tXnnyj4/Screenshot-2021-08-03-10-45-41.png'
-      />
-      <Nav />
       <div className='main-courses-pg'>
         <h1>Our Courses</h1>
         <div className='search-container'>
@@ -59,10 +50,6 @@ const Courses = () => {
           </div>
         </div>
         <RequestCourseSection />
-      </div>
-      <div className='footer-container'>
-        <NewsletterResistor />
-        <Footer />
       </div>
     </>
   )

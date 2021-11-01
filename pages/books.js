@@ -1,7 +1,3 @@
-import MetaHeading from '../components/meta-heading'
-import Nav from '../components/nav'
-import NewsletterResistor from '../components/newsletter_registor'
-import Footer from '../components/items/footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { faSearch, faAward } from '@fortawesome/free-solid-svg-icons'
@@ -21,8 +17,6 @@ const Books = () => {
   }, [])
   return (
     <>
-      <MetaHeading title='Courses' />
-      <Nav />
       <div className='main-courses-pg'>
         <h1>Our Books</h1>
         <div className='search-container'>
@@ -64,10 +58,6 @@ const Books = () => {
           </div>
         </div>
         <RequestCourseSection />
-      </div>
-      <div className='footer-container'>
-        <NewsletterResistor />
-        <Footer />
       </div>
     </>
   )
