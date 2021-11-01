@@ -2,7 +2,9 @@ const Dashboard = () => {
   const user = 'Srest'
   return (
     <>
-      <h1>Hello, {user}</h1>
+      <div className='main'>
+        <h1>Hello, {user}</h1>
+      </div>
     </>
   )
 }
