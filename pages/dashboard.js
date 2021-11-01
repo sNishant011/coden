@@ -1,7 +1,8 @@
 const Dashboard = () => {
+  const user = 'Srest'
   return (
     <>
-      <h1>Dashboard</h1>
+      <h1>Hello, {user}</h1>
     </>
   )
 }
