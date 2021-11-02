@@ -20,7 +20,6 @@ const Dashboard = () => {
   console.log(user_enrolled_courses)
   return (
     <>
-<<<<<<< HEAD
       <div className='main'>
         <h1>Hello, {user_detail.f_name}</h1>
         <hr />
@@ -47,9 +46,6 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-=======
-      <h1>Hello, {user}</h1>
->>>>>>> parent of f3d88a8 (fixed css bug)
     </>
   )
 }

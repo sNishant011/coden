@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import NavLink from './items/nav_link'
 const Nav = () => {
