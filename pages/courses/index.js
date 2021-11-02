@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAward } from '@fortawesome/free-solid-svg-icons'
 import CoursesCard from '../../components/items/course_card'
 import RequestCourseSection from '../../components/items/course_request'
-import CoursesData from '../../courses_data'
+import CoursesData from '../../components/data/courses_data'
 
 const Courses = () => {
   const courses = CoursesData()
