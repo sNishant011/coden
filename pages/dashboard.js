@@ -21,6 +21,7 @@ const Dashboard = () => {
   return (
     <>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className='main'>
         <h1>Hello, {user_detail.f_name}</h1>
         <hr />
@@ -47,6 +48,9 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+=======
+      <h1>Hello, {user}</h1>
+>>>>>>> parent of f3d88a8 (fixed css bug)
 =======
       <h1>Hello, {user}</h1>
 >>>>>>> parent of f3d88a8 (fixed css bug)
