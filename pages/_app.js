@@ -13,13 +13,7 @@ function MyApp({ Component, pageProps }) {
       />
 
       <Nav />
-<<<<<<< HEAD
       <Component {...pageProps} />
-=======
-      <div className='main'>
-        <Component {...pageProps} />
-      </div>
->>>>>>> parent of f3d88a8 (fixed css bug)
       <div className='footer-container'>
         <NewsletterResistor />
         <Footer />

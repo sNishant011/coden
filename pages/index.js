@@ -9,12 +9,14 @@ import PlatformFeature from '../components/platform-feature'
 const Home = () => {
   return (
     <>
-      <Landing />
-      <Features />
-      <Courses />
-      <RequestCourseSection />
-      <Testemonials />
-      <PlatformFeature />
+      <div className='main'>
+        <Landing />
+        <Features />
+        <Courses />
+        <RequestCourseSection />
+        <Testemonials />
+        <PlatformFeature />
+      </div>
     </>
   )
 }
