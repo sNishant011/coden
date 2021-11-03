@@ -1,12 +1,10 @@
 import { useRouter } from 'next/router'
 import ChapterList from '../../components/chapterList'
-import Footer from '../../components/items/footer'
-import MetaHeading from '../../components/meta-heading'
-import Nav from '../../components/nav'
+
 import NewsletterResistor from '../../components/newsletter_registor'
-import CoursesData from '../../courses_data'
 import { useState, useEffect, useRef } from 'react'
 import ChapterDetail from '../../components/chapterDetail'
+import CoursesData from '../../data/courses_data'
 const CourseDetail = () => {
   const router = useRouter()
   const course_id = router.query.all_chapters
