@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import ChapterList from '../../components/chapterList'
 
-import NewsletterResistor from '../../components/newsletter_registor'
 import { useState, useEffect, useRef } from 'react'
 import ChapterDetail from '../../components/chapterDetail'
 import CoursesData from '../../data/courses_data'

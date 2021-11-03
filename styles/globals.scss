@@ -1076,13 +1076,12 @@ footer {
     position: fixed;
     z-index: 10;
     padding: 0rem;
-    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    top: 130px;
-
+    top: 136px;
+    left: 0;
     transform: translateX(-100%);
     h2 {
       text-align: left;
@@ -1106,6 +1105,16 @@ footer {
       width: 100%;
     }
   }
+  .small-active {
+    transform: translateX(0);
+    left: 3rem;
+    @include tab() {
+      left: 2rem;
+    }
+    @include mobile() {
+      left: 1rem;
+    }
+  }
   .small-nav {
     display: flex;
     background-color: $accent-dark;
@@ -1114,9 +1123,10 @@ footer {
     z-index: 10;
     transition: all 0.5s ease;
     padding: 0.5rem;
-
+    align-items: center;
     h1 {
       width: 100%;
+      font-size: 1.5rem;
       text-align: center;
     }
     .menu-btn {

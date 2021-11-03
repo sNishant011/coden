@@ -6,17 +6,11 @@ const ChapterList = ({
   setCurrentChapter,
   chapterMenuActive,
 }) => {
-  const chapterNav = useRef(null)
-  useEffect(() => {
-    if (chapterMenuActive) {
-      chapterNav.current.style.transform = 'translateX(0%)'
-    } else {
-      chapterNav.current.style.transform = 'translateX(-100%)'
-    }
-  }, [chapterMenuActive])
   return (
     <>
-      <nav className='chapters-nav' ref={chapterNav}>
+      <nav
+        className={`chapters-nav ${chapterMenuActive ? 'small-active' : ''}`}
+      >
         <h2 className='course-title'>{course?.title}</h2>
         <div className='chapters-list'>
           {chapters?.map((chapter, index) => (
