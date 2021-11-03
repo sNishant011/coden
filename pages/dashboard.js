@@ -25,6 +25,7 @@ const Dashboard = () => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className='main'>
         <h1>Hello, {user_detail.f_name}</h1>
         <hr />
@@ -68,6 +69,9 @@ const Dashboard = () => {
     <>
       <h1>Dashboard</h1>
 >>>>>>> parent of d25acf5 (fixed minor bugs)
+=======
+      <h1>Hello, {user}</h1>
+>>>>>>> parent of f3d88a8 (fixed css bug)
     </>
   )
 }
