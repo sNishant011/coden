@@ -779,13 +779,6 @@ footer {
 }
 // Courses Page Styling
 .main-courses-pg {
-  padding: 0 3rem;
-  @include tab {
-    padding: 0 2rem;
-  }
-  @include mobile() {
-    padding: 0 1rem;
-  }
   h1 {
     font-size: 3rem;
     @include mobile() {
@@ -1039,7 +1032,6 @@ footer {
   font-size: 1.6rem;
 }
 .course-chapter-section {
-  position: relative;
   .chapter-container {
     display: grid;
     place-items: center;
@@ -1068,7 +1060,7 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    top: 139px;
+    top: 130px;
 
     transform: translateX(-100%);
     h2 {
