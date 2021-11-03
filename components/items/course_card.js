@@ -2,7 +2,14 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
-const CoursesCard = ({ src, title, active, description, course_slug }) => {
+const CoursesCard = ({
+  src,
+  title,
+  active,
+  description,
+  completion_percent,
+  course_slug,
+}) => {
   return (
     <div className={`course-card ${active ? 'active-card' : ''}`}>
       <Image src={require(`../../public/${src}`)} alt={title} />
@@ -16,6 +23,14 @@ const CoursesCard = ({ src, title, active, description, course_slug }) => {
           </div>
         </a>
       </Link>
+      {completion_percent ? (
+        <span
+          className='completion-status'
+          style={{ width: completion_percent + '%' }}
+        ></span>
+      ) : (
+        ''
+      )}
     </div>
   )
 }

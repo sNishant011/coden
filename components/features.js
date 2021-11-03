@@ -1,5 +1,5 @@
 import Card from './items/card'
-import CardData from '../card_data'
+import CardData from '../data/card_data'
 const Features = () => {
   const datas = CardData()
 

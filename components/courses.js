@@ -1,5 +1,5 @@
 import CoursesCard from './items/course_card'
-import CoursesData from '../courses_data'
+import CoursesData from '../data/courses_data'
 
 const Courses = () => {
   const courses = CoursesData()

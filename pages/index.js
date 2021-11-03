@@ -1,5 +1,3 @@
-import MetaHeading from '../components/meta-heading'
-import Nav from '../components/nav'
 import Landing from '../components/landing'
 import Features from '../components/features'
 import Courses from '../components/courses'
