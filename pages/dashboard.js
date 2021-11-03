@@ -2,6 +2,7 @@ import UserData from '../components/data/user_data'
 import CoursesData from '../components/data/courses_data'
 import CoursesCard from '../components/items/course_card'
 const Dashboard = () => {
+<<<<<<< HEAD
   const user_detail = UserData()
 
   // all_course will contain list of dictionary {course_id: 2, ....}
@@ -62,6 +63,11 @@ const Dashboard = () => {
 =======
       <h1>Hello, {user}</h1>
 >>>>>>> parent of f3d88a8 (fixed css bug)
+=======
+  return (
+    <>
+      <h1>Dashboard</h1>
+>>>>>>> parent of d25acf5 (fixed minor bugs)
     </>
   )
 }

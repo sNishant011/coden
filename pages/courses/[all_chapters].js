@@ -46,6 +46,11 @@ const CourseDetail = () => {
 
   return (
     <>
+      <MetaHeading
+        title={`Courses | ${currentCourse ? currentCourse.title : 'Detail'}`}
+        thumbnail={currentCourse?.thumbnail_src}
+      />
+      <Nav />
       <div className='course-chapter-section'>
         <div className='small-nav' ref={navRef}>
           <div
@@ -71,6 +76,10 @@ const CourseDetail = () => {
             setChapterMenuActive={setChapterMenuActive}
           />
         </div>
+      </div>
+      <div className='footer-container'>
+        <NewsletterResistor />
+        <Footer />
       </div>
     </>
   )

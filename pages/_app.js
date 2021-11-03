@@ -13,9 +13,7 @@ function MyApp({ Component, pageProps }) {
       />
 
       <Nav />
-      <div className='main'>
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
       <div className='footer-container'>
         <NewsletterResistor />
         <Footer />
