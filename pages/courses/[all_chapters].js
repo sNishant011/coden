@@ -4,7 +4,7 @@ import Footer from '../../components/items/footer'
 import MetaHeading from '../../components/meta-heading'
 import Nav from '../../components/nav'
 import NewsletterResistor from '../../components/newsletter_registor'
-import CoursesData from '../../components/data/courses_data'
+import CoursesData from '../../courses_data'
 import { useState, useEffect, useRef } from 'react'
 import ChapterDetail from '../../components/chapterDetail'
 const CourseDetail = () => {
