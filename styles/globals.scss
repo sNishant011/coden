@@ -49,9 +49,7 @@ html {
   scroll-behavior: smooth;
   font-family: $primary-font;
 }
-*:focus {
-  border: 2px solid #fff !important;
-}
+
 h1,
 p {
   color: $primary-text-color;
@@ -542,7 +540,7 @@ nav {
       padding: 1rem;
       &:hover {
         transform: scale(1);
-        background-color: rgb(34, 172, 0) !important;
+        // background-color: rgb(34, 172, 0) !important;
 
         .warrow {
           #button-text {
@@ -718,24 +716,21 @@ nav {
       padding: 1rem 1.5rem;
       text-align: left;
       outline: none;
-      border: none;
+      border: 2px solid $accent-text-color;
       border-radius: 50px;
-      background-color: $primary-background;
+      background-color: transparent;
       letter-spacing: 0.2em;
       transition: all 0.3s ease-in-out;
       font-weight: 600;
       // box-shadow: -1px 1px 15px #006600;
-      &:focus {
-        @include mobile() {
-          width: 100%;
-        }
+      @include mobile() {
+        width: 100%;
+        padding: 0.7 1rem;
+        border: 2px solid $accent-text-color;
       }
+
       &::placeholder {
         color: #ffffff;
-      }
-      &:focus {
-        outline: none;
-        border: none !important;
       }
     }
     button {
@@ -749,7 +744,7 @@ nav {
       font-weight: 800;
       letter-spacing: 0.1rem;
       transition: 0.3s ease-in-out;
-      background-color: $primary-background;
+      background-color: $card-bg;
       &:hover {
         background-color: $accent-text-color;
         color: #000;
