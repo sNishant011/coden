@@ -1,8 +1,9 @@
+import style from '../styles/home.module.scss'
 const PlatformFeature = () => {
   return (
-    <section className='platform-feature'>
+    <section className={style.platform_feature}>
       <h1>Platforms</h1>
-      <div className='info'>
+      <div className={style.info}>
         <h2>Learn Anywhere on Web, Android, and IOS</h2>
         <ul>
           <li>Downloadable</li>

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
+
+$primary-background: #3f3f3f;
+$primary-text-color: #fff;
+$accent-text-color: #00c997;
+$accent-dark: rgb(27, 27, 27);
+$card-bg: rgb(34, 34, 34);
+$primary-font: 'Nunito', sans-serif;
+$mobile: 650px;
+$tab: 1000px;
+$navsize: 950px;
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: #{$tab}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$tab}) {
+    @content;
+  }
+}
+@mixin navsize {
+  @media (max-width: #{$navsize}) {
+    @content;
+  }
+}

@@ -4,6 +4,7 @@ import { faSearch, faAward } from '@fortawesome/free-solid-svg-icons'
 import BookCard from '../components/items/book_card'
 import RequestCourseSection from '../components/items/course_request'
 import { useState, useEffect } from 'react'
+import style from '../styles/course.module.scss'
 import axios from 'axios'
 const Books = () => {
   const [books, setBooks] = useState(null)
@@ -17,9 +18,9 @@ const Books = () => {
   }, [])
   return (
     <>
-      <div className='main-courses-pg'>
+      <div className={style.main_courses_pg}>
         <h1>Our Books</h1>
-        <div className='search-container'>
+        <div className={style.search_container}>
           <input
             type='text'
             placeholder='Type to Search...'
@@ -30,20 +31,20 @@ const Books = () => {
           />
           <Link href='/courses'>
             <a>
-              <button className='btn round-rect'>
-                <FontAwesomeIcon icon={faSearch} className='icon' />
+              <button className={`btn ${style.round_rect}`}>
+                <FontAwesomeIcon icon={faSearch} className={style.icon} />
                 <div className='text'>Search</div>
               </button>
             </a>
           </Link>
         </div>
         <h2>
-          <div className='icon-container'>
-            <FontAwesomeIcon icon={faAward} className='icon' />
+          <div className={style.icon_container}>
+            <FontAwesomeIcon icon={faAward} className={style.icon} />
           </div>
           Certifable Course
         </h2>
-        <div className='course-container'>
+        <div className={style.course_container}>
           <div className='courses'>
             {books ? '' : <h2>Loading</h2>}
             {books?.map((book, index) => (

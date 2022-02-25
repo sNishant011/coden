@@ -1,10 +1,10 @@
 import TestemonialCard from './items/testemonial_card'
-
+import style from '../styles/home.module.scss'
 const Testemonials = () => {
   return (
-    <section className='testemonials-section'>
+    <section className={style.testemonials_section}>
       <h1>Testemonials</h1>
-      <div className='cards'>
+      <div className={style.cards}>
         <TestemonialCard
           imgsrc='illustrations_imgs/person.png'
           name='Nishant Shrestha'

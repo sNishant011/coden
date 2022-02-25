@@ -1,35 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
-
-$primary-background: #3f3f3f;
-$primary-text-color: #fff;
-$accent-text-color: #00ffbf;
-$accent-dark: rgb(27, 27, 27);
-$card-bg: rgb(34, 34, 34);
-$primary-font: 'Nunito', sans-serif;
-$mobile: 650px;
-$tab: 1000px;
-$navsize: 950px;
-@mixin mobile {
-  @media (max-width: #{$mobile}) {
-    @content;
-  }
-}
-@mixin tab {
-  @media (max-width: #{$tab}) {
-    @content;
-  }
-}
-@mixin desktop {
-  @media (min-width: #{$tab}) {
-    @content;
-  }
-}
-@mixin navsize {
-  @media (max-width: #{$navsize}) {
-    @content;
-  }
-}
+@import './vars';
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -220,15 +189,16 @@ nav {
 .btn {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  border: 2px solid $accent-text-color;
-  border-radius: 50px;
-  outline: none;
-  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+
+  background-color: $primary-background;
   font-weight: 550;
   transition: all 0.3s ease-in-out;
   width: 100%;
   cursor: pointer;
   overflow: hidden;
+  box-shadow: -2px 2px 20px rgba(0, 0, 0, 0.507);
   #button-text {
     color: $primary-text-color;
 
@@ -302,189 +272,11 @@ nav {
     transition: all 0.3s ease-in-out;
   }
 }
-.landing-container {
-  padding-top: 2rem;
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-areas: 'texts svgpart';
-
-  @include mobile() {
-    grid-template-areas: 'svgpart' 'texts';
-    .svg-container {
-      svg {
-        height: 200px !important;
-      }
-    }
-  }
-  .text-container {
-    grid-area: texts;
-    h1 {
-      font-size: 3rem;
-      #highlighted-text {
-        color: $accent-text-color;
-      }
-    }
-  }
-  .svg-container {
-    grid-area: svgpart;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      height: 300px;
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-  .btn {
-    #button-text {
-      color: $primary-text-color;
-
-      transition: all 0.3s ease-in-out;
-    }
-    &:hover {
-      #button-text {
-        margin-left: 0;
-        color: #000;
-        font-weight: bold;
-        transition: all 0.3s ease-in-out;
-      }
-    }
-    &:hover {
-      background-color: $accent-text-color;
-      transition: all 0.3s ease-in-out;
-    }
-  }
-}
-.features-section {
-  height: 100%;
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    place-items: center;
-    grid-gap: 3rem;
-
-    @include tab() {
-      .card {
-        #number {
-          bottom: 5%;
-        }
-      }
-    }
-    @include mobile() {
-      grid-gap: 1rem;
-      .card {
-        #number {
-          top: 3%;
-        }
-      }
-    }
-    .card {
-      background-color: $primary-background;
-      box-shadow: 0px 4px 53px rgba(0, 0, 0, 0.25);
-
-      padding: 1.5rem;
-      width: 100%;
-      height: 100%;
-      padding-top: 0.5rem;
-      position: relative;
-      cursor: pointer;
-      z-index: 1;
-      overflow: hidden;
-      &:hover {
-        #number {
-          transition: all 0.4s ease-in-out;
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-      border-radius: 20px;
-      h2 {
-        margin: 0;
-        color: $primary-text-color;
-        padding: 0.5rem 0;
-        font-size: 2rem;
-
-        z-index: 1;
-      }
-      p {
-        z-index: 1;
-        text-align: justify;
-        line-height: 1.5rem;
-      }
-      #number {
-        position: absolute;
-        font-size: 8rem;
-        font-weight: 900;
-        right: 10%;
-        bottom: 10%;
-        z-index: -1;
-        color: #555555;
-        transition: all 0.3s ease-in-out;
-        font-family: 'Montserrat', sans-serif;
-        transform: translateX(20%);
-        opacity: 0;
-      }
-    }
-  }
-}
 
 @include desktop() {
   div {
     .active-card {
       transform: scale(1.1);
-    }
-  }
-}
-.course-request {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-image: url(../public/illustrations_imgs/lines1.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: $primary-background;
-  box-shadow: 0px 4px 53px rgba(0, 0, 0, 0.25);
-
-  border-radius: 20px;
-  padding: 2rem;
-  margin-top: 4.5rem;
-  transition: all 0.4s ease-in-out;
-
-  &:hover {
-    background-position: left;
-  }
-  @include tab() {
-    margin-top: 2rem;
-  }
-  h1 {
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
-    color: $primary-text-color;
-  }
-
-  .btn {
-    background-color: #242424;
-    border: 0;
-    margin-top: 1rem;
-    #button-text {
-      color: $primary-text-color;
-
-      transition: all 0.3s ease-in-out;
-    }
-    &:hover {
-      #button-text {
-        margin-left: 0;
-        transition: all 0.3s ease-in-out;
-      }
-    }
-    &:hover {
-      background-color: $accent-text-color;
-      transition: all 0.3s ease-in-out;
     }
   }
 }
@@ -499,6 +291,7 @@ nav {
 
   .course-card {
     display: flex;
+    border-radius: 8px !important;
     justify-content: center;
     flex-direction: column;
     background-color: $primary-background;
@@ -507,6 +300,7 @@ nav {
     transition: all 0.3s ease-in-out;
     max-height: 600px;
     padding: 2rem;
+    overflow-x: hidden;
     .completion-status {
       display: inline-block;
       width: 0;
@@ -518,7 +312,6 @@ nav {
       left: 0;
     }
     &:hover {
-      transform: scale(1.1);
       background-color: hsla(0, 0%, 0%, 0.39) !important;
 
       .warrow {
@@ -579,95 +372,7 @@ nav {
     }
   }
 }
-.testemonials-section {
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 4rem;
 
-    @include mobile() {
-      grid-gap: 2rem;
-    }
-    .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0.5rem 1rem;
-      align-items: center;
-      background-color: $primary-background;
-      box-shadow: 0px 4px 53px rgba(0, 0, 0, 0.25);
-
-      border-radius: 15px;
-      background-image: url(../public/illustrations_imgs/lines1.png);
-      background-size: cover;
-      background-repeat: no-repeat;
-      transition: all 1s ease-in-out;
-      background-position: center;
-
-      cursor: pointer;
-      color: $primary-text-color;
-
-      * {
-        padding-top: 0.5rem;
-      }
-      img {
-        object-fit: contain;
-
-        top: 10%;
-      }
-      &:hover {
-        background-position: right;
-        transition: all 1s ease-in-out;
-      }
-      h5 {
-        width: 100%;
-        text-align: center;
-      }
-    }
-  }
-}
-.platform-feature {
-  .info {
-    background-image: url(../public/illustrations_imgs/anywhere.png);
-    background-size: contain;
-    background-position: right;
-    background-repeat: no-repeat;
-    color: $primary-text-color;
-    @include mobile() {
-      background-image: none;
-      background-size: cover;
-      background-position: center;
-      background-position-y: top;
-    }
-    h2 {
-      width: 50%;
-      font-size: 2.5rem;
-      color: $primary-text-color;
-      text-shadow: 2px 2px $accent-text-color;
-      @include tab() {
-        width: 80%;
-      }
-      @include mobile() {
-        width: 100%;
-        font-size: 2rem;
-      }
-    }
-    ul {
-      list-style-type: none;
-
-      li {
-        font-size: 1.3rem;
-        font-weight: 300;
-        &::before {
-          content: '✓';
-          color: $accent-text-color;
-          margin-right: 0.5rem;
-          font-size: 1.5rem;
-        }
-      }
-    }
-  }
-}
 .footer-container {
   background-image: url(../public/illustrations_imgs/nepal.png);
   padding: 1rem 3rem;
@@ -805,141 +510,7 @@ footer {
   }
 }
 // Courses Page Styling
-.main-courses-pg {
-  h1 {
-    font-size: 3rem;
-    @include mobile() {
-      font-size: 2.5rem;
-    }
-  }
-  .icon {
-    height: 20px;
-    width: 20px;
-    object-fit: contain;
-  }
 
-  .search-container {
-    margin: 2rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    width: 100%;
-    @include mobile() {
-      margin-top: 1rem 0;
-      height: 50px;
-    }
-    input {
-      height: 100%;
-      width: 50%;
-      border-radius: 7px 0px 0px 7px;
-      border: 4px solid #6f6f6f;
-      background-color: transparent;
-      word-spacing: 0.2rem;
-      font-weight: bold;
-      border-right: none;
-      font-size: 1.6rem;
-      color: #fff;
-      padding: 0.8rem 0.8rem;
-      transition: all 0.3s ease;
-      @include mobile() {
-        width: 100%;
-        font-size: 1.1rem;
-        padding: 0.5rem;
-      }
-      &::placeholder {
-        color: #a3a3a3;
-      }
-      &:focus {
-        outline: none;
-        border: 4px solid $accent-text-color;
-        border-right: none;
-      }
-    }
-    .round-rect {
-      height: 60px;
-      display: flex;
-      color: $primary-text-color;
-      background-color: $accent-text-color;
-      border-radius: 0px 7px 7px 0px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .text {
-        margin-left: 10px;
-        font-size: 1.6rem;
-        font-weight: 800;
-      }
-      @include mobile() {
-        height: 50px;
-        .text {
-          font-size: 1.1rem;
-        }
-      }
-    }
-  }
-  h2 {
-    color: $primary-text-color;
-    display: flex;
-    align-items: center;
-    font-weight: 650;
-    font-size: 2rem !important;
-
-    .icon-container {
-      background-color: #00c62b73;
-      padding: 0.6rem;
-      border-radius: 50%;
-      height: 45px !important;
-      width: 45px !important;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: 10px;
-      .icon {
-        color: #00c62b;
-        height: 100%;
-        width: 100%;
-      }
-    }
-    @include mobile() {
-      font-size: 1.5rem !important;
-      .icon-container {
-        height: 40px !important;
-        width: 40px !important;
-      }
-    }
-  }
-  .courses {
-    margin-top: 2rem;
-    .course-card {
-      border-radius: 3px !important;
-      &:hover {
-        transform: scale(1);
-        background-color: $primary-background !important;
-        .btn {
-          box-shadow: 0px 2px 15px rgb(36, 36, 36);
-        }
-      }
-      .btn {
-        border-radius: 8px !important;
-        margin-left: auto;
-        outline: none;
-        border: none;
-        &:hover {
-          background-color: $accent-text-color !important;
-          .icon {
-            color: $accent-text-color;
-            transition: all 0.5s ease-in-out !important;
-            // transition: color 0.2s !important;
-          }
-          span {
-            color: $primary-text-color !important;
-          }
-        }
-      }
-    }
-  }
-}
 .course-request-page {
   padding: 0 3rem;
   h1 {
