@@ -31,7 +31,7 @@ const Landing = () => {
           </Link>
         </div>
         <div className='svg-container'>
-          <Image src={landingImage} alt='landing-img' />
+          <Image src={landingImage} placeholder='blur' alt='landing-img' />
         </div>
       </div>
     </>
