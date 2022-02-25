@@ -8,14 +8,31 @@ import style from '../styles/course.module.scss'
 import axios from 'axios'
 const Books = () => {
   const [books, setBooks] = useState(null)
+  const [filteredBooks, setFilteredBooks] = useState(null)
+  const [query, setQuery] = useState('')
   useEffect(() => {
     axios
       .get(
         'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=7tB3Zlp1psYYQofxY9esapE9WtgiF1A7'
       )
-      .then((response) => setBooks(response.data.results.books))
+      .then((response) => {
+        setBooks(response.data.results.books)
+        setFilteredBooks(response.data.results.books)
+      })
       .catch((err) => console.log(err))
   }, [])
+  useEffect(() => {
+    console.log(filteredBooks)
+  }, [filteredBooks])
+  const filterBook = (title1) => {
+    console.log(title1)
+
+    setFilteredBooks(
+      books.filter((b1) =>
+        b1.title.toLocaleLowerCase().includes(title1.toLocaleLowerCase())
+      )
+    )
+  }
   return (
     <>
       <div className={style.main_courses_pg}>
@@ -27,6 +44,11 @@ const Books = () => {
             name='search-query'
             id='search-query'
             autoComplete='off'
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value)
+              filterBook(e.target.value)
+            }}
             required
           />
           <Link href='/courses'>
@@ -46,8 +68,8 @@ const Books = () => {
         </h2>
         <div className={style.course_container}>
           <div className='courses'>
-            {books ? '' : <h2>Loading</h2>}
-            {books?.map((book, index) => (
+            {filteredBooks ? '' : <h2>Loading</h2>}
+            {filteredBooks?.map((book, index) => (
               <BookCard
                 key={index}
                 title={book.title}

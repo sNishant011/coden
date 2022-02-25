@@ -5,9 +5,16 @@ import CoursesCard from '../../components/items/course_card'
 import RequestCourseSection from '../../components/items/course_request'
 import CoursesData from '../../data/courses_data'
 import style from '../../styles/course.module.scss'
+import { useEffect, useState } from 'react'
 const Courses = () => {
   const courses = CoursesData()
-
+  const [filteredCourses, setFilteredCourses] = useState(courses)
+  const [query, setQuery] = useState('')
+  const filterCourse = () => {
+    setFilteredCourses(
+      courses.filter((c) => c.title.toLocaleLowerCase().includes(query))
+    )
+  }
   return (
     <>
       <div className={style.main_courses_pg}>
@@ -19,6 +26,11 @@ const Courses = () => {
             name='search-query'
             id='search-query'
             autoComplete='off'
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value)
+              filterCourse()
+            }}
             required
           />
           <Link href='/courses'>
@@ -38,7 +50,7 @@ const Courses = () => {
         </h2>
         <div className={style.course_container}>
           <div className='courses'>
-            {courses.map((course, index) => (
+            {filteredCourses.map((course, index) => (
               <CoursesCard
                 key={index}
                 title={course.title}
