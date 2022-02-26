@@ -72,6 +72,9 @@ section {
       margin-top: 1rem;
     }
   }
+  &:focus {
+    outline: 1px solid $accent-text-color;
+  }
 }
 
 .active {
@@ -210,6 +213,9 @@ nav {
       margin-left: 10%;
       transition: all 0.3s ease-in-out;
     }
+  }
+  &:focus {
+    outline: 2px solid $accent-text-color;
   }
   &:hover {
     background-color: $accent-text-color;
