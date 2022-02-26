@@ -18,7 +18,6 @@ const Dashboard = () => {
       }
     })
   })
-  console.log(user_enrolled_courses)
   return (
     <>
       <div>

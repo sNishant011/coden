@@ -1,19 +1,18 @@
 import Nav from '../components/nav'
 import MetaHeading from '../components/meta-heading'
-import { useForm } from '@formspree/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 const RequestForm = () => {
-  const [state, handleSubmit] = useForm('xnqlgdoq')
-  if (state.succeeded) {
-    return (
-      <p>
-        We will look for your request.!!
-        <br />
-        Stay tunned.
-      </p>
-    )
-  }
+  // const [state, handleSubmit] = useForm('xnqlgdoq')
+  // if (state.succeeded) {
+  //   return (
+  //     <p>
+  //       We will look for your request.!!
+  //       <br />
+  //       Stay tunned.
+  //     </p>
+  //   )
+  // }
   return (
     <form
       className='form-container'
@@ -53,7 +52,13 @@ const RequestForm = () => {
       <label htmlFor='course_name' className='field-label'>
         Course/ Book name
       </label>
-      <button type='submit' disabled={state.submitting} className='btn warrow'>
+      {/* <button type='submit' disabled={state.submitting} className='btn warrow'>
+        <span id='button-text'>Request Course</span>
+        <div className='icon-container'>
+          <FontAwesomeIcon icon={faArrowRight} className='icon' />
+        </div>
+      </button> */}
+      <button type='submit' className='btn warrow'>
         <span id='button-text'>Request Course</span>
         <div className='icon-container'>
           <FontAwesomeIcon icon={faArrowRight} className='icon' />
@@ -66,7 +71,6 @@ const CourseRequestPage = () => {
   return (
     <>
       <MetaHeading title='Request Couses' />
-      <Nav />
       <div className='course-request-page'>
         <h1>Course/ Book Request Form</h1>
         <div className='course-request-form'>

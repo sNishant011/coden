@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
 import { faSearch, faAward } from '@fortawesome/free-solid-svg-icons'
 import BookCard from '../components/items/book_card'
 import RequestCourseSection from '../components/items/course_request'
@@ -23,7 +22,6 @@ const Books = () => {
   }, [])
 
   const filterBook = (title1) => {
-    console.log(title1)
 
     setFilteredBooks(
       books.filter((b1) =>

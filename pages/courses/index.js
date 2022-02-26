@@ -1,17 +1,15 @@
-import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAward } from '@fortawesome/free-solid-svg-icons'
 import CoursesCard from '../../components/items/course_card'
 import RequestCourseSection from '../../components/items/course_request'
 import CoursesData from '../../data/courses_data'
 import style from '../../styles/course.module.scss'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 const Courses = () => {
   const courses = CoursesData()
   const [filteredCourses, setFilteredCourses] = useState(CoursesData())
   const [query, setQuery] = useState('')
   const filterCourse = (query1) => {
-    console.log(query1)
     setFilteredCourses(
       courses.filter((c) =>
         c.title.toLocaleLowerCase().includes(query1.toLowerCase())
