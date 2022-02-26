@@ -21,9 +21,7 @@ const Books = () => {
       })
       .catch((err) => console.log(err))
   }, [])
-  useEffect(() => {
-    console.log(filteredBooks)
-  }, [filteredBooks])
+
   const filterBook = (title1) => {
     console.log(title1)
 
@@ -51,14 +49,13 @@ const Books = () => {
             }}
             required
           />
-          <Link href='/courses'>
-            <a>
-              <button className={`btn ${style.round_rect}`}>
-                <FontAwesomeIcon icon={faSearch} className={style.icon} />
-                <div className='text'>Search</div>
-              </button>
-            </a>
-          </Link>
+          <button
+            className={`btn ${style.round_rect}`}
+            onClick={() => filterBook(query)}
+          >
+            <FontAwesomeIcon icon={faSearch} className={style.icon} />
+            <div className='text'>Search</div>
+          </button>
         </div>
         <h2>
           <div className={style.icon_container}>

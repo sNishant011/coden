@@ -6,16 +6,16 @@
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-areas: 'texts svgpart';
-
+  grid-gap: 2rem;
   @include mobile() {
     grid-template-areas: 'svgpart' 'texts';
-    .svg-container {
+    .svg_container {
       svg {
         height: 200px !important;
       }
     }
   }
-  .text-container {
+  .text_container {
     grid-area: texts;
     h1 {
       font-size: 3rem;
@@ -24,7 +24,7 @@
       }
     }
   }
-  .svg-container {
+  .svg_container {
     grid-area: svgpart;
     display: flex;
     justify-content: center;

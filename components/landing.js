@@ -10,7 +10,7 @@ const Landing = () => {
       <div className={style.landing_container}>
         <div className={style.text_container}>
           <h1>
-            Best Platform for Self{' '}
+            Best Platform for Self
             <span id={style.highlighted_text}>
               <br />
               Learners
@@ -30,8 +30,8 @@ const Landing = () => {
             </a>
           </Link>
         </div>
-        <div className='svg-container'>
-          <Image src={landingImage} placeholder='blur' alt='landing-img' />
+        <div className={style.svg_container}>
+          <Image src={landingImage} quality={50} alt='landing-img' />
         </div>
       </div>
     </>

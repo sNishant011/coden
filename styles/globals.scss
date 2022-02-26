@@ -193,11 +193,10 @@ nav {
   font-size: 1rem;
   border: 2px solid transparent;
   border-radius: 8px;
-
   background-color: $primary-background;
   font-weight: 550;
   transition: all 0.3s ease-in-out;
-  width: 100%;
+  width: 150px;
   cursor: pointer;
   overflow: hidden;
   box-shadow: -2px 2px 20px rgba(0, 0, 0, 0.507);
@@ -236,7 +235,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   transition: all 0.3s ease-in-out;
 
   width: 200px;
@@ -286,7 +285,8 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 2rem;
-
+  place-items: center;
+  margin-top: 2rem;
   @include mobile() {
     grid-gap: 1rem;
   }
@@ -301,6 +301,7 @@ nav {
     position: relative;
     transition: all 0.3s ease-in-out;
     max-height: 600px;
+    max-width: 500px;
     padding: 1.2rem;
     overflow-x: hidden;
     .completion-status {

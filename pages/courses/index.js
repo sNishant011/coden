@@ -8,11 +8,14 @@ import style from '../../styles/course.module.scss'
 import { useEffect, useState } from 'react'
 const Courses = () => {
   const courses = CoursesData()
-  const [filteredCourses, setFilteredCourses] = useState(courses)
+  const [filteredCourses, setFilteredCourses] = useState(CoursesData())
   const [query, setQuery] = useState('')
-  const filterCourse = () => {
+  const filterCourse = (query1) => {
+    console.log(query1)
     setFilteredCourses(
-      courses.filter((c) => c.title.toLocaleLowerCase().includes(query))
+      courses.filter((c) =>
+        c.title.toLocaleLowerCase().includes(query1.toLowerCase())
+      )
     )
   }
   return (
@@ -29,18 +32,17 @@ const Courses = () => {
             value={query}
             onChange={(e) => {
               setQuery(e.target.value)
-              filterCourse()
+              filterCourse(e.target.value)
             }}
             required
           />
-          <Link href='/courses'>
-            <a>
-              <button className={`btn ${style.round_rect}`}>
-                <FontAwesomeIcon icon={faSearch} className={style.icon} />
-                <div className='text'>Search</div>
-              </button>
-            </a>
-          </Link>
+          <button
+            className={`btn ${style.round_rect}`}
+            onClick={() => filterCourse}
+          >
+            <FontAwesomeIcon icon={faSearch} className={style.icon} />
+            <div className='text'>Search</div>
+          </button>
         </div>
         <h2>
           <div className={style.icon_container}>
