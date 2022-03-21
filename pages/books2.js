@@ -2,26 +2,38 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAward } from '@fortawesome/free-solid-svg-icons'
 import BookCard from '../components/items/book_card'
 import RequestCourseSection from '../components/items/course_request'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import style from '../styles/course.module.scss'
 import axios from 'axios'
 
-export const getStaticProps = async () => {
-  return axios
+export const getServerSideProps = async () => {
+  axios
     .get(
       'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=7tB3Zlp1psYYQofxY9esapE9WtgiF1A7'
     )
-    .then((response) => ({
-      props: {
-        books: response.data.results.books,
-      },
-    }))
+    .then((response) => {
+      setBooks(response.data.results.books)
+      setFilteredBooks(response.data.results.books)
+    })
     .catch((err) => console.log(err))
 }
 
-const Books = ({ books }) => {
-  const [filteredBooks, setFilteredBooks] = useState(books)
+const Books = () => {
+  const [books, setBooks] = useState(null)
+  const [filteredBooks, setFilteredBooks] = useState(null)
   const [query, setQuery] = useState('')
+  useEffect(() => {
+    axios
+      .get(
+        'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=7tB3Zlp1psYYQofxY9esapE9WtgiF1A7'
+      )
+      .then((response) => {
+        setBooks(response.data.results.books)
+        setFilteredBooks(response.data.results.books)
+      })
+      .catch((err) => console.log(err))
+  }, [])
+
   const filterBook = (title1) => {
     setFilteredBooks(
       books.filter((b1) =>
