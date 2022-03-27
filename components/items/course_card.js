@@ -12,7 +12,12 @@ const CoursesCard = ({
 }) => {
   return (
     <div className={`course-card ${active ? 'active-card' : ''}`}>
-      <Image src={require(`../../public/${src}`)} quality={50} alt={title} />
+      <Image
+        src={require(`../../public/${src}`)}
+        priority
+        quality={50}
+        alt={title}
+      />
       <h3 className='course-title'>{title}</h3>
       <p>{description}</p>
       <Link href='/courses/[course_slug]' as={`/courses/${course_slug}`}>

@@ -5,7 +5,14 @@ import Image from 'next/image'
 const BookCard = ({ src, title, active, description }) => {
   return (
     <div className={`course-card ${active ? 'active-card' : ''}`}>
-      <Image src={src} width={400} objectFit='cover' height={300} alt={title} />
+      <Image
+        src={src}
+        width={400}
+        priority
+        objectFit='cover'
+        height={300}
+        alt={title}
+      />
       <h3 className='course-title'>{`${title.slice(0, 15)}...`}</h3>
       <p>{description.slice(0, 150)}...</p>
       <Link href='/books'>
