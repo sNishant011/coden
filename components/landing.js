@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
-import landingImage from '../public/illustrations_imgs/landing.png'
+import landingImage from '../public/illustrations_imgs/landing.svg'
 import style from '../styles/home.module.scss'
 import Link from 'next/link'
 const Landing = () => {

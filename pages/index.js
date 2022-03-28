@@ -18,7 +18,6 @@ const Home = () => {
         <meta name='description' content='Coden, An e-learning platform.' />
         <meta name='theme-color' content='#00c997' />
         <title>CODEN | E-Learning Platform</title>
-        <link rel='manifest' href='/manifest.json' />
         <link rel='shortcut icon' href='/favicon.ico' />
         <link rel='apple-touch-icon' href='/apple-icon.png'></link>
       </Head>

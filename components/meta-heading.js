@@ -6,7 +6,8 @@ const MetaHeading = ({ title, thumbnail }) => {
         name='description'
         content='Best Learning Platfrom for self coders.'
       />
-      <meta name='viewport' content='width, initial-scale=1.0' />
+
+      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <title>CodeN | {title}</title>
       <meta name='title' content={`CodeN | ${title}`} />
       <meta

@@ -3,7 +3,7 @@ const CoursesData = () => {
     {
       title: 'Learn Fullstack',
       slug: 'learn-fullstack',
-      thumbnail_src: 'illustrations_imgs/landing.png',
+      thumbnail_src: 'illustrations_imgs/landing.svg',
       course_id: 1,
       course_description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deserunt, expedita tempore voluptas magnam ad molestias laboriosam repellendus ipsa? Libero modi excepturi, nisi illum molestias asperiores possimus. Provident, vel reiciendis?',

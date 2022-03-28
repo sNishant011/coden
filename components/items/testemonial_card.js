@@ -4,9 +4,9 @@ const TestemonialCard = ({ imgsrc, name, post, review }) => {
   return (
     <div className={style.card}>
       <Image src={require(`../../public/${imgsrc}`)} alt={name} />
-      <h3>Nishant Shrestha</h3>
+      <h2>Nishant Shrestha</h2>
       <p>{review}</p>
-      <h5>{post}</h5>
+      <h3>{post}</h3>
     </div>
   )
 }

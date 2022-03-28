@@ -13,7 +13,7 @@ const BookCard = ({ src, title, active, description }) => {
         height={300}
         alt={title}
       />
-      <h3 className='course-title'>{`${title.slice(0, 15)}...`}</h3>
+      <h2 className='course-title'>{`${title.slice(0, 15)}...`}</h2>
       <p>{description.slice(0, 150)}...</p>
       <Link href='/books'>
         <a className='btn warrow'>
