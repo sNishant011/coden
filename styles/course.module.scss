@@ -80,7 +80,7 @@
     font-size: 2rem !important;
 
     .icon_container {
-      background-color: #00c62b73;
+      background-color: $accent-dark;
       padding: 0.6rem;
       border-radius: 50%;
       height: 45px !important;
@@ -89,6 +89,7 @@
       justify-content: center;
       align-items: center;
       margin-right: 10px;
+      box-shadow: 0px 0px 10px hsla(133, 100%, 50%, 0.329);
       .icon {
         color: #00c62b;
         height: 100%;

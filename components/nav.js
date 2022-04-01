@@ -38,7 +38,7 @@ const Nav = () => {
           <NavLink href='' title='CodeN' setNav={setNav} />
         </span>
       </div>
-      <div className={`links ${nav ? 'open' : ''}`}>
+      <ul className={`links ${nav ? 'open' : ''}`}>
         <NavLink href='' title='Home' setNav={setNav} />
 
         <NavLink href='courses' title='Courses' setNav={setNav} />
@@ -51,7 +51,7 @@ const Nav = () => {
             <button className='btn stroke'>My&nbsp;Progress</button>
           </a>
         </Link>
-      </div>
+      </ul>
 
       <div
         className={`menu-btn ${nav ? 'close-btn' : ''}`}
